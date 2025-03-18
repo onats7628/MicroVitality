@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MicroVitality - Čerstvá Mikrozeleninka </title>
+<title>MicroVitality - Čerstvá Mikrozeleninka</title>
 <link rel="icon" type="image/x-icon" href="favicon-new.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@ font-family: 'Arial', sans-serif;
 .folklor-font {
 font-family: 'Butterfly Kids', cursive;
 font-size: 4rem;
-color: #ffffff; /* Biela farba pre lepší kontrast na zelenom pozadí */
+color: #ffffff;
 }
 
 body {
@@ -127,85 +127,6 @@ color: #8bc34a;
 font-size: 1.4rem;
 }
 
-.microgreen-card p {
-font-size: 1rem;
-color: #555;
-}
-
-/* Modal Window */
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
-z-index: 200;
-justify-content: center;
-align-items: center;
-}
-
-.modal-content {
-background: #fff;
-padding: 2rem;
-border-radius: 12px;
-max-width: 500px;
-width: 90%;
-position: relative;
-animation: slideIn 0.3s ease;
-}
-
-.modal-content h3 {
-color: #4caf50;
-margin-bottom: 1rem;
-}
-
-.modal-content p {
-font-size: 1rem;
-line-height: 1.5;
-}
-
-.close-btn {
-position: absolute;
-top: 10px;
-right: 15px;
-font-size: 1.5rem;
-color: #8bc34a;
-cursor: pointer;
-transition: color 0.3s;
-}
-
-.close-btn:hover {
-color: #4caf50;
-}
-
-/* Animations */
-@keyframes grow {
-0% { transform: scale(0.9); opacity: 0; }
-100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeInDown {
-from { opacity: 0; transform: translateY(-20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-
-@keyframes slideIn {
-from { transform: translateY(-50px); opacity: 0; }
-to { transform: translateY(0); opacity: 1; }
-}
-
 /* Footer */
 footer {
 background: #4caf50;
@@ -214,27 +135,12 @@ text-align: center;
 padding: 2rem 1rem;
 }
 
-footer p {
-margin: 0.5rem 0;
-}
-
-footer .social a {
-color: white;
-margin: 0 1rem;
-text-decoration: none;
-font-size: 1.2rem;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
 header h1 { font-size: 2rem; }
-header p { font-size: 1rem; }
-nav ul { flex-direction: column; align-items: center; }
-nav ul li { margin: 0.8rem 0; }
-section { padding: 2rem 1rem; }
 .microgreen-card { width: 100%; max-width: 300px; }
-.modal-content { width: 95%; }
 }
+
 </style>
 </head>
 <body>
@@ -253,67 +159,30 @@ section { padding: 2rem 1rem; }
 </ul>
 </nav>
 
-<section id="domov">
-<h2>Vitajte v MicroVitality</h2>
-<p>Sme lokálny pestovateľ čerstvých microgreens, ktoré prinášajú zdravie a skvelú chuť do vašej kuchyne. Pestujeme ich s dôrazom na kvalitu, čerstvosť a prírodný spôsob pestovania – bez pesticídov a umelých hnojív. Objavte silu prírody v každom súste!</p>
-</section>
-
 <section id="produkty">
 <h2>Naša Mikrozelenina</h2>
 <div class="microgreens-container">
-<div class="microgreen-card" data-modal="Hrášok-modal">
-<img src="Hrášok.jpg" alt="Hrášok">
+<div class="microgreen-card" data-modal="hrasok-modal">
+<img src="hrasok.jpg" alt="Hrášok">
 <h3>Hrášok</h3>
-<p>Pikantná chuť pre šaláty a sendviče.</p>
 </div>
 <div class="microgreen-card" data-modal="redkovka-modal">
 <img src="redkovka.jpg" alt="Reďkovka">
 <h3>Reďkovka</h3>
-<p>Ostrá a svieža, plná živín.</p>
 </div>
-<div class="microgreen-card" data-modal="brokolica-modal">
-<img src="brokolica.jpg" alt="Brokolica">
-<h3>Brokolica</h3>
-<p>Jemná a zdravá pochúťka.</p>
+<div class="microgreen-card" data-modal="slnecnica-modal">
+<img src="slnecnica.jpg" alt="Slnečnica">
+<h3>Slnečnica</h3>
 </div>
+<div class="microgreen-card" data-modal="bazalka-modal">
+<img src="bazalka.jpg" alt="Bazalka">
+<h3>Bazalka</h3>
 </div>
-</section>
-
-<!-- Modal Windows -->
-<div id="Hrášok-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn">×</span>
-<h3>Benefity Hrášku</h3>
-<p>Hrášok je bohatá na vitamín K, ktorý podporuje zdravie kostí. Obsahuje aj antioxidanty, ktoré chránia bunky a posilňujú imunitu.</p>
+<div class="microgreen-card" data-modal="kalerab-modal">
+<img src="kalerab.jpg" alt="Kaleráb">
+<h3>Kaleráb</h3>
 </div>
 </div>
-
-<div id="redkovka-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn">×</span>
-<h3>Benefity Reďkovky</h3>
-<p>Reďkovka je zdrojom vitamínu C a vlákniny. Podporuje detoxikáciu a zdravé trávenie.</p>
-</div>
-</div>
-
-<div id="brokolica-modal" class="modal">
-<div class="modal-content">
-<span class="close-btn">×</span>
-<h3>Benefity Brokolice</h3>
-<p>Brokolica obsahuje sulforafán s protizápalovými účinkami. Podporuje zdravie srdca a je bohatá na vitamíny.</p>
-</div>
-</div>
-
-<section id="o-nas">
-<h2>O nás</h2>
-<p>V MicroVitality veríme, že zdravie začína na tanieri. Preto sa s láskou venujeme pestovaniu čerstvých, výživných a chutných microgreens – malých rastlín s veľkým množstvom vitamínov, minerálov a antioxidantov.
-
-Naša misia je jednoduchá: prinášať čerstvé a kvalitné microgreens priamo k vám, aby ste si mohli dopriať zdravie v každom súste. Pestujeme ich s maximálnou starostlivosťou, bez chemikálií a v dokonale kontrolovaných podmienkach, aby ste mali istotu, že dostávate len to najlepšie.
-
-Či už ste nadšenec zdravého životného štýlu, domáci kuchár alebo profesionálny šéfkuchár, naše microgreens dodajú vašim jedlám nielen skvelú chuť, ale aj extra dávku živín. Skúste ich pridať do šalátov, smoothie, sendvičov alebo ako štýlový doplnok na tanier – možnosti sú nekonečné!
-
-Ďakujeme, že podporujete lokálne pestovanie a zdravý životný štýl. Ak máte akékoľvek otázky alebo si chcete objednať, neváhajte nás kontaktovať!
-</p>
 </section>
 
 <section id="kontakt">
@@ -329,7 +198,6 @@ Naša misia je jednoduchá: prinášať čerstvé a kvalitné microgreens priamo
 <a href="https://www.facebook.com/profile.php?id=61572663232362" target="_blank">Facebook</a>
 <a href="https://www.instagram.com/microvitality" target="_blank">Instagram</a>
 </div>
-
 </footer>
 
 <script>
@@ -342,45 +210,8 @@ const targetSection = document.getElementById(targetId);
 targetSection.scrollIntoView({ behavior: 'smooth' });
 });
 });
-
-// Trigger animations on scroll
-const cards = document.querySelectorAll('.microgreen-card');
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.style.animation = 'grow 1s ease forwards';
-}
-});
-}, { threshold: 0.2 });
-cards.forEach(card => observer.observe(card));
-
-// Modal functionality
-const modalCards = document.querySelectorAll('.microgreen-card');
-const modals = document.querySelectorAll('.modal');
-const closeButtons = document.querySelectorAll('.close-btn');
-
-modalCards.forEach(card => {
-card.addEventListener('click', () => {
-const modalId = card.getAttribute('data-modal');
-const modal = document.getElementById(modalId);
-modal.style.display = 'flex';
-});
-});
-
-closeButtons.forEach(btn => {
-btn.addEventListener('click', () => {
-const modal = btn.closest('.modal');
-modal.style.display = 'none';
-});
-});
-
-modals.forEach(modal => {
-modal.addEventListener('click', (e) => {
-if (e.target === modal) {
-modal.style.display = 'none';
-}
-});
-});
 </script>
+
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MicroVitality - Čerstvá Mikrozeleninka</title>
+<title>MicroVitality - Čerstvá Mikrozeleninka </title>
 <link rel="icon" type="image/x-icon" href="favicon-new.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,60 +38,10 @@ padding: 5rem 1rem;
 position: relative;
 }
 
-header h1 {
-font-size: 2.8rem;
-animation: fadeInDown 1s ease;
-}
-
-header p {
-font-size: 1.3rem;
-margin-top: 1rem;
-animation: fadeInUp 1s ease;
-}
-
-/* Navigation */
-nav {
-background: #fff;
-padding: 1rem;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-display: flex;
-justify-content: center;
-list-style: none;
-}
-
-nav ul li {
-margin: 0 2rem;
-}
-
-nav ul li a {
-text-decoration: none;
-color: #4caf50;
-font-weight: bold;
-font-size: 1.1rem;
-transition: color 0.3s;
-}
-
-nav ul li a:hover {
-color: #8bc34a;
-}
-
 /* Sections */
 section {
 padding: 4rem 2rem;
 text-align: center;
-}
-
-section h2 {
-font-size: 2rem;
-color: #4caf50;
-margin-bottom: 2rem;
-animation: fadeIn 1s ease;
 }
 
 /* Microgreens Container */
@@ -110,10 +60,6 @@ width: 300px;
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 transition: transform 0.3s ease;
 cursor: pointer;
-}
-
-.microgreen-card:hover {
-transform: translateY(-10px);
 }
 
 .microgreen-card img {
@@ -135,12 +81,6 @@ text-align: center;
 padding: 2rem 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-header h1 { font-size: 2rem; }
-.microgreen-card { width: 100%; max-width: 300px; }
-}
-
 </style>
 </head>
 <body>
@@ -159,20 +99,36 @@ header h1 { font-size: 2rem; }
 </ul>
 </nav>
 
+<section id="domov">
+<h2>Vitajte v MicroVitality</h2>
+<p>Sme lokálny pestovateľ čerstvých microgreens, ktoré prinášajú zdravie a skvelú chuť do vašej kuchyne. Pestujeme ich s dôrazom na kvalitu, čerstvosť a prírodný spôsob pestovania – bez pesticídov a umelých hnojív. Objavte silu prírody v každom súste!</p>
+</section>
+
 <section id="produkty">
 <h2>Naša Mikrozelenina</h2>
 <div class="microgreens-container">
-<div class="microgreen-card" data-modal="hrasok-modal">
-<img src="hrasok.jpg" alt="Hrášok">
+<div class="microgreen-card" data-modal="Hrášok-modal">
+<img src="Hrášok.jpg" alt="Hrášok">
 <h3>Hrášok</h3>
 </div>
 <div class="microgreen-card" data-modal="redkovka-modal">
 <img src="redkovka.jpg" alt="Reďkovka">
 <h3>Reďkovka</h3>
 </div>
+<div class="microgreen-card" data-modal="brokolica-modal">
+<img src="brokolica.jpg" alt="Brokolica">
+<h3>Brokolica</h3>
+</div>
 <div class="microgreen-card" data-modal="slnecnica-modal">
 <img src="slnecnica.jpg" alt="Slnečnica">
 <h3>Slnečnica</h3>
+</div>
+</div>
+
+<div class="microgreens-container">
+<div class="microgreen-card" data-modal="horcica-modal">
+<img src="horcica.jpg" alt="Horčica">
+<h3>Horčica</h3>
 </div>
 <div class="microgreen-card" data-modal="bazalka-modal">
 <img src="bazalka.jpg" alt="Bazalka">
@@ -182,14 +138,24 @@ header h1 { font-size: 2rem; }
 <img src="kalerab.jpg" alt="Kaleráb">
 <h3>Kaleráb</h3>
 </div>
+<div class="microgreen-card" data-modal="zerucha-modal">
+<img src="zerucha.jpg" alt="Žerucha">
+<h3>Žerucha</h3>
 </div>
+</div>
+</section>
+
+<section id="o-nas">
+<h2>O nás</h2>
+<p>V MicroVitality veríme, že zdravie začína na tanieri. Preto sa s láskou venujeme pestovaniu čerstvých, výživných a chutných microgreens – malých rastlín s veľkým množstvom vitamínov, minerálov a antioxidantov.</p>
+<p>Naša misia je jednoduchá: prinášať čerstvé a kvalitné microgreens priamo k vám, aby ste si mohli dopriať zdravie v každom súste. Pestujeme ich s maximálnou starostlivosťou, bez chemikálií a v dokonale kontrolovaných podmienkach, aby ste mali istotu, že dostávate len to najlepšie.</p>
+<p>Či už ste nadšenec zdravého životného štýlu, domáci kuchár alebo profesionálny šéfkuchár, naše microgreens dodajú vašim jedlám nielen skvelú chuť, ale aj extra dávku živín. Skúste ich pridať do šalátov, smoothie, sendvičov alebo ako štýlový doplnok na tanier – možnosti sú nekonečné!</p>
 </section>
 
 <section id="kontakt">
 <h2>Kontakt</h2>
 <p>Email: mikrobylinkylili@gmail.com</p>
 <p>Telefón: +421 904 476 783</p>
-<p>Adresa: Voderady</p>
 </section>
 
 <footer>
@@ -199,19 +165,5 @@ header h1 { font-size: 2rem; }
 <a href="https://www.instagram.com/microvitality" target="_blank">Instagram</a>
 </div>
 </footer>
-
-<script>
-// Smooth scrolling for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href').substring(1);
-const targetSection = document.getElementById(targetId);
-targetSection.scrollIntoView({ behavior: 'smooth' });
-});
-});
-</script>
-
 </body>
 </html>
-

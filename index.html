@@ -163,34 +163,17 @@ section h2 {
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
+  width: 95%;            /* takmer cez celú obrazovku */
+  max-height: 90vh;      /* maximálna výška 90% výšky viewportu */
+  overflow-y: auto;      /* umožní scrollovanie, ak je obsah vyšší */
   position: relative;
   animation: slideIn 0.3s ease;
 }
 
-.modal-content h3 {
-  color: #4caf50;
-  margin-bottom: 1rem;
-}
-
-.modal-content p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  color: #8bc34a;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.close-btn:hover {
-  color: #4caf50;
+/* Zabezpečí, že text v <pre> sa bude zalamovať */
+.modal-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 /* Animations */

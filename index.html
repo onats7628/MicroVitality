@@ -247,15 +247,18 @@ section h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .star-rating input {
   display: none;
 }
-
 .star-rating label {
   color: #ccc;
   cursor: pointer;
   display: inline-block;
+}
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffca28;
 }
 
 /* Recenzie – automatické horizontálne scrollovanie */
@@ -457,11 +460,16 @@ footer .social a {
       
       <label>Hodnotenie:</label>
       <div class="star-rating">
-         <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 hviezdičiek">★</label>
-         <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 hviezdičky">★</label>
-         <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 hviezdičky">★</label>
-         <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 hviezdičky">★</label>
-         <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 hviezdička">★</label>
+         <input type="radio" id="star5" name="rating" value="5">
+         <label for="star5" title="5 hviezdičiek">★</label>
+         <input type="radio" id="star4" name="rating" value="4">
+         <label for="star4" title="4 hviezdičky">★</label>
+         <input type="radio" id="star3" name="rating" value="3">
+         <label for="star3" title="3 hviezdičky">★</label>
+         <input type="radio" id="star2" name="rating" value="2">
+         <label for="star2" title="2 hviezdičky">★</label>
+         <input type="radio" id="star1" name="rating" value="1">
+         <label for="star1" title="1 hviezdička">★</label>
       </div>
       
       <label for="reviewImage">Príloha (obrázok):</label>
@@ -936,49 +944,5 @@ function loadReviews() {
 function saveReview(reviewData) {
   var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
   reviews.push(reviewData);
-  localStorage.setItem('reviews', JSON.stringify(reviews));
-}
-
-// Review form functionality with Local Storage persistence
-document.getElementById('reviewForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var name = document.getElementById('reviewName').value;
-  var text = document.getElementById('reviewText').value;
-  var ratingElem = document.querySelector('input[name="rating"]:checked');
-  if (!ratingElem) {
-    alert('Prosím vyberte hodnotenie.');
-    return;
-  }
-  var rating = ratingElem.value;
-  
-  var reviewData = {
-    name: name,
-    text: text,
-    rating: rating,
-    image: null
-  };
-  
-  var fileInput = document.getElementById('reviewImage');
-  if (fileInput.files && fileInput.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      reviewData.image = e.target.result;
-      saveReview(reviewData);
-      loadReviews();
-    }
-    reader.readAsDataURL(fileInput.files[0]);
-  } else {
-    saveReview(reviewData);
-    loadReviews();
-  }
-  
-  this.reset();
-});
-
-// Načítaj recenzie z Local Storage pri načítaní stránky
-loadReviews();
-</script>
-</body>
-</html>
 
 

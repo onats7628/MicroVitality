@@ -138,7 +138,7 @@ section h2 {
   transform: translateY(-10px) scale(1.1);
 }
 
-/* Upravené pravidlo pre obrázky, aby boli všetky rovnaké (vzorkou je Pea.jpg) */
+/* Upravené pravidlo pre obrázky, aby boli všetky rovnaké */
 .microgreen-card img {
   width: 100%;
   height: 200px;
@@ -182,7 +182,7 @@ section h2 {
   animation: slideIn 0.3s ease;
 }
 
-/* Zabezpečí, že text v <pre> sa bude zalamovať */
+/* Zabezpečí zalamovanie textu v <pre> */
 .modal-content pre {
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -238,6 +238,76 @@ footer .social a {
   .microgreen-card { width: 100%; max-width: 300px; }
   .modal-content { width: 95%; }
   .video-container { height: 200px; }
+}
+
+/* Recenzie - nový štýl */
+#recenzie {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f0f0f0;
+}
+#recenzie h2 {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 2rem;
+}
+#review-form {
+  margin-bottom: 2rem;
+}
+#review-form textarea {
+  width: 80%;
+  height: 100px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.star-rating {
+  margin: 1rem 0;
+}
+.star-rating input {
+  margin: 0 0.3rem;
+}
+#review-form input[type="file"] {
+  margin-bottom: 1rem;
+}
+#review-form button {
+  padding: 0.7rem 1.5rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#review-form button:hover {
+  background: #43a047;
+}
+
+/* Scrolling review banner */
+.review-banner {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: scrollReviews 15s linear infinite;
+  background: #fff;
+  padding: 1rem 0;
+}
+.review-banner .review-item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Keyframes pre scrolling */
+@keyframes scrollReviews {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
 }
 </style>
 </head>
@@ -299,7 +369,7 @@ footer .social a {
       <p>Osviežujúca a jemne pikantná, plná chuti.</p>
     </div>
     
-    <!-- Prerušenie, aby sa prvých 5 zobrazených na prvom riadku -->
+    <!-- Prerušenie, aby sa prvých 5 zobrazilo na prvom riadku -->
     <div style="flex-basis: 100%; height: 0;"></div>
     
     <!-- Druhý rad (5 produktov) -->
@@ -667,6 +737,34 @@ Malé, ale silné – reďkovkové microgreens ti dajú energiu a zdravie na ka�
   </div>
 </div>
 
+<!-- Nová sekcia recenzií -->
+<section id="recenzie">
+  <h2>Recenzie</h2>
+  <!-- Formulár pre pridanie recenzie -->
+  <form id="review-form">
+    <textarea name="review-text" placeholder="Napíšte svoju recenziu" required></textarea>
+    <div class="star-rating">
+      <label for="star1">1</label>
+      <input type="radio" id="star1" name="rating" value="1" required>
+      <label for="star2">2</label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star3">3</label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star4">4</label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star5">5</label>
+      <input type="radio" id="star5" name="rating" value="5">
+    </div>
+    <input type="file" name="review-photo" accept="image/*">
+    <button type="submit">Odoslať recenziu</button>
+  </form>
+
+  <!-- Banner s recenziami zákazníkov -->
+  <div class="review-banner">
+    <!-- Tu sa budú dynamicky vkladať recenzie -->
+  </div>
+</section>
+
 <section id="o-nas">
   <h2>O nás</h2>
   <p>V MicroVitality veríme, že zdravie začína na tanieri. Preto sa s láskou venujeme pestovaniu čerstvých, výživných a chutných microgreens – malých rastlín s veľkým množstvom vitamínov, minerálov a antioxidantov.
@@ -695,7 +793,7 @@ Malé, ale silné – reďkovkové microgreens ti dajú energiu a zdravie na ka�
 </footer>
 
 <script>
-// Smooth scrolling for navigation
+// Smooth scrolling pre navigáciu
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -705,7 +803,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Trigger animations on scroll
+// Animácie pri scrollovaní pre microgreen karty
 const cards = document.querySelectorAll('.microgreen-card');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -716,7 +814,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 cards.forEach(card => observer.observe(card));
 
-// Modal functionality
+// Modal funkčnosť
 const modalCards = document.querySelectorAll('.microgreen-card');
 const modals = document.querySelectorAll('.modal');
 const closeButtons = document.querySelectorAll('.close-btn');
@@ -743,6 +841,61 @@ modals.forEach(modal => {
     }
   });
 });
+
+// Ukladanie a zobrazovanie recenzií (vrátane fotiek) pomocou localStorage
+document.addEventListener('DOMContentLoaded', function(){
+  const reviewBanner = document.querySelector('.review-banner');
+  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+  function renderReviews() {
+    reviewBanner.innerHTML = '';
+    reviews.forEach(review => {
+      const reviewItem = document.createElement('div');
+      reviewItem.className = 'review-item';
+      let content = `<strong>Recenzia:</strong> ${review.text} | <strong>Hodnotenie:</strong> ${review.rating}`;
+      if (review.photo) {
+        content += `<br><img src="${review.photo}" alt="Review Photo" style="max-width:100px; max-height:100px;">`;
+      }
+      reviewItem.innerHTML = content;
+      reviewBanner.appendChild(reviewItem);
+    });
+  }
+
+  renderReviews();
+
+  document.getElementById('review-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const reviewText = this.elements['review-text'].value;
+    const rating = this.elements['rating'].value;
+    const photoFile = this.elements['review-photo'].files[0];
+
+    if (photoFile) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const review = {
+          text: reviewText,
+          rating: rating,
+          photo: event.target.result
+        };
+        reviews.push(review);
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+        renderReviews();
+      };
+      reader.readAsDataURL(photoFile);
+    } else {
+      const review = {
+        text: reviewText,
+        rating: rating,
+        photo: null
+      };
+      reviews.push(review);
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+      renderReviews();
+    }
+    this.reset();
+  });
+});
 </script>
 </body>
 </html>
+

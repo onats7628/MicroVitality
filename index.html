@@ -138,7 +138,7 @@ section h2 {
   transform: translateY(-10px) scale(1.1);
 }
 
-/* Rovnaké rozmery obrázkov */
+/* Upravené pravidlo pre obrázky, aby boli všetky rovnaké (vzorkou je Pea.jpg) */
 .microgreen-card img {
   width: 100%;
   height: 200px;
@@ -182,13 +182,13 @@ section h2 {
   animation: slideIn 0.3s ease;
 }
 
-/* Zalomenie textu v <pre> */
+/* Zabezpečí, že text v <pre> sa bude zalamovať */
 .modal-content pre {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* Animácie */
+/* Animations */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -238,93 +238,6 @@ footer .social a {
   .microgreen-card { width: 100%; max-width: 300px; }
   .modal-content { width: 95%; }
   .video-container { height: 200px; }
-}
-
-/* Recenzie - formulár a banner */
-/* Formulár recenzie */
-#recenzie {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: #f0f0f0;
-}
-#recenzie h2 {
-  font-size: 2rem;
-  color: #4caf50;
-  margin-bottom: 2rem;
-}
-#review-form {
-  margin-bottom: 2rem;
-}
-#review-form input[type="text"],
-#review-form textarea {
-  width: 80%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-#review-form textarea {
-  height: 100px;
-  resize: vertical;
-}
-#review-form input[type="file"] {
-  margin-bottom: 1rem;
-}
-
-/* Hviezdičkové hodnotenie */
-.star-rating {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-.star-rating input {
-  display: none;
-}
-.star-rating label {
-  font-size: 1.5rem;
-  color: #ccc;
-  cursor: pointer;
-}
-.star-rating input:checked ~ label,
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  color: #ffc107;
-}
-
-#review-form button {
-  padding: 0.7rem 1.5rem;
-  background: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-#review-form button:hover {
-  background: #43a047;
-}
-
-/* Recenzie – statická biela plocha s plynulým pohybom textu */
-.review-banner {
-  background: #fff;
-  padding: 1rem 0;
-  overflow: hidden;
-  position: relative;
-}
-.scrolling-text {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scrollReviews 15s linear infinite;
-}
-
-/* Keyframes pre pohyb textu */
-@keyframes scrollReviews {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
 }
 </style>
 </head>
@@ -381,12 +294,12 @@ footer .social a {
       <p>Jemne sladkastý a osviežujúci, bohatý na živiny.</p>
     </div>
     <div class="microgreen-card" data-modal="horcica-modal">
-      <img src="horcica.jpg" alt="Horčica">
+      <img src="horcica.jpg" alt="Mäta">
       <h3>Horčica</h3>
       <p>Osviežujúca a jemne pikantná, plná chuti.</p>
     </div>
     
-    <!-- Prerušenie, aby sa prvých 5 zobrazilo na prvom riadku -->
+    <!-- Prerušenie, aby sa prvých 5 zobrazených na prvom riadku -->
     <div style="flex-basis: 100%; height: 0;"></div>
     
     <!-- Druhý rad (5 produktov) -->
@@ -396,7 +309,7 @@ footer .social a {
       <p>Jemne korenistá a osviežujúca, plná energie.</p>
     </div>
     <div class="microgreen-card" data-modal="azia-modal">
-      <img src="azia.jpg" alt="Ázijská zmes">
+      <img src="azia.jpg" alt="Ázia">
       <h3>Ázijská zmes</h3>
       <p>Objavte lahodnú umami chuť.</p>
     </div>
@@ -435,8 +348,8 @@ footer .social a {
 
 🟢 Vitamíny v hráškových microgreens
 
-🌞 Vitamín A (beta-karotén) – podporuje zdravie očí, pokožky a imunitný systém.
-🦸‍♂️ Vitamín C – silný antioxidant, posilňuje imunitu a podporuje tvorbu kolagénu.
+🌞 Vitamín A (beta-karotén) – podporuje zdravie očí, pokožky a imunitný systém. 👀
+🦸‍♂️ Vitamín C – silný antioxidant, posilňuje imunitu a podporuje tvorbu kolagénu. 🛡️
 🔋 Vitamín B1 (tiamín) – dôležitý pre energetický metabolizmus a správne fungovanie nervov.
 🧠 Vitamín B2 (riboflavín) – pomáha premieňať potravu na energiu a chráni bunky pred oxidačným stresom.
 ⚡ Vitamín B3 (niacín) – podporuje mozog, nervovú sústavu a zdravie kože.
@@ -447,7 +360,7 @@ footer .social a {
 
 🔵 Minerály v hráškových microgreens
 
-💪 Vápnik (Ca) – podporuje pevnosť kostí a zubov.
+💪 Vápnik (Ca) – podporuje pevnosť kostí a zubov. 🦴
 ⚡ Horčík (Mg) – nevyhnutný pre svaly, nervy a zdravé srdce.
 💖 Draslík (K) – reguluje krvný tlak a podporuje funkciu svalov.
 🩸 Železo (Fe) – pomáha pri tvorbe červených krviniek a prevencii anémie.
@@ -455,6 +368,8 @@ footer .social a {
 🧠 Mangán (Mn) – podporuje mozgové funkcie a metabolizmus živín.
 🔩 Meď (Cu) – dôležitá pre tvorbu červených krviniek a zdravie nervov.
 🦷 Fosfor (P) – nevyhnutný pre silné kosti a energiu buniek.
+
+🟠 Ďalšie prospešné látky
 
 🔬 Chlorofyl – podporuje detoxikáciu organizmu a zlepšuje okysličenie krvi.
 🧪 Antioxidanty (polyfenoly, flavonoidy) – chránia bunky pred poškodením a spomaľujú starnutie.
@@ -465,50 +380,292 @@ footer .social a {
 
 ✅ Podporujú imunitu – vďaka vitamínu C a zinku.
 ✅ Zlepšujú trávenie – vysoký obsah vlákniny podporuje zdravie čriev.
-✅ Pomáhajú pri chudnutí – nízkokalorické, ale výživné.
-✅ Podporujú zdravé srdce – draslík a antioxidanty chránia cievy.
+✅ Pomáhajú pri chudnutí – nízkokalorické, ale výživné! 🥗
+✅ Podporujú zdravé srdce – draslík a antioxidanty chránia cievy. ❤️
 ✅ Znižujú stres a únavu – horčík a vitamíny B pomáhajú nervovému systému.
 ✅ Podporujú zdravé kosti – vitamín K, vápnik a fosfor chránia pred osteoporózou.
 
-👉 Tip: Hráškové microgreens sú skvelé do šalátov, smoothies, polievok, sendvičov alebo ako príloha k hlavnému jedlu!
+👉 Tip: Hráškové microgreens sú skvelé do šalátov, smoothies, polievok, sendvičov alebo ako príloha k hlavnému jedlu! 🍽️
 
-Uži si silu prírody v jednej hrsti!</pre>
+Uži si silu prírody v jednej hrsti! 🌱💚</pre>
   </div>
 </div>
 
-<!-- Ostatné modály zachovávajú pôvod -->
-<!-- Modály pre Reďkovku, Brokolicu, Kaleráb, Horčicu, Rukolu, Ázijský mix, Šalát, Chili... (nezmenené) -->
+<div id="redkovka-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Reďkovky</h3>
+    <pre>Reďkovkové microgreens nie sú len chutné a jemne pikantné, ale aj plné živín, ktoré podporujú zdravie a vitalitu. Obsahujú množstvo vitamínov, minerálov a antioxidantov, ktoré prospievajú telu na viacerých úrovniach.
 
-<!-- Nová sekcia recenzií -->
-<section id="recenzie">
-  <h2>Recenzie</h2>
-  <!-- Formulár pre pridanie recenzie -->
-  <form id="review-form">
-    <input type="text" name="review-name" placeholder="Zadajte svoje meno" required>
-    <textarea name="review-text" placeholder="Napíšte svoju recenziu" required></textarea>
-    <div class="star-rating">
-      <input type="radio" id="star5" name="rating" value="5" required>
-      <label for="star5">&#9733;</label>
-      <input type="radio" id="star4" name="rating" value="4">
-      <label for="star4">&#9733;</label>
-      <input type="radio" id="star3" name="rating" value="3">
-      <label for="star3">&#9733;</label>
-      <input type="radio" id="star2" name="rating" value="2">
-      <label for="star2">&#9733;</label>
-      <input type="radio" id="star1" name="rating" value="1">
-      <label for="star1">&#9733;</label>
-    </div>
-    <input type="file" name="review-photo" accept="image/*">
-    <button type="submit">Odoslať recenziu</button>
-  </form>
+🔬 Výživové hodnoty na 100 g reďkovkových microgreens:
 
-  <!-- Statická biela plocha s pohybujúcim sa textom recenzií -->
-  <div class="review-banner">
-    <div class="scrolling-text">
-      <!-- Recenzie budú dynamicky vkladané sem -->
-    </div>
+✅ Kalórie: 40 kcal
+✅ Bielkoviny: 3,8 g
+✅ Sacharidy: 6,5 g
+✅ Vláknina: 4 g
+✅ Tuky: 0,6 g
+
+
+🟢 Vitamíny v reďkovkových microgreens
+
+🌞 Vitamín A (beta-karotén) – chráni oči a podporuje zdravú pokožku. 👁️✨
+🦸‍♂️ Vitamín C – silný antioxidant, ktorý posilňuje imunitu a urýchľuje hojenie rán. 🛡️
+🧠 Vitamín B1 (tiamín) – dôležitý pre správnu funkciu nervov a metabolizmus energie.
+🔋 Vitamín B2 (riboflavín) – podporuje tvorbu červených krviniek a zdravie buniek.
+⚡ Vitamín B3 (niacín) – pomáha pri detoxikácii a udržiava zdravú pokožku.
+🛠️ Vitamín B5 (kyselina pantoténová) – nevyhnutný pre tvorbu hormónov a zdravý metabolizmus.
+💡 Vitamín B6 – dôležitý pre mozgové funkcie a reguláciu nálady.
+🩸 Vitamín B9 (kyselina listová) – podporuje tvorbu DNA a krvotvorbu.
+🦴 Vitamín K – podporuje pevné kosti a zdravú zrážanlivosť krvi.
+
+🔵 Minerály v reďkovkových microgreens
+
+💪 Vápnik (Ca) – podporuje silné kosti a zuby. 🦷
+⚡ Horčík (Mg) – dôležitý pre svaly, nervový systém a zdravé srdce.
+💖 Draslík (K) – pomáha regulovať krvný tlak a podporuje hydratáciu buniek.
+🩸 Železo (Fe) – dôležité pre tvorbu červených krviniek a okysličenie tela.
+🛡️ Zinok (Zn) – posilňuje imunitný systém a podporuje regeneráciu buniek.
+🧠 Mangán (Mn) – nevyhnutný pre metabolizmus a zdravie mozgu.
+🔩 Meď (Cu) – pomáha pri tvorbe kolagénu a zdraví ciev.
+🦷 Fosfor (P) – podporuje energetický metabolizmus a silné kosti
+🟠 Ďalšie prospešné látky
+
+🔬 Chlorofyl – pomáha detoxikovať organizmus a zlepšuje okysličenie buniek.
+🧪 Antioxidanty (glukozinoláty, flavonoidy) – chránia bunky pred poškodením a znižujú riziko rakoviny.
+💚 Sulforafan – silná protizápalová látka, ktorá podporuje detox pečene a zdravie pľúc.
+🌾 Luteín a zeaxantín – chránia oči pred škodlivým UV žiarením.
+
+💡 Prečo zaradiť reďkovkové microgreens do stravy?
+
+✅ Podporujú trávenie – vďaka vysokému obsahu vlákniny pomáhajú pri pravidelnom vyprázdňovaní. 🚀
+✅ Posilňujú imunitný systém – obsahujú silné antioxidanty a vitamín C. 🛡️
+✅ Detoxikujú organizmus – pomáhajú pečeni zbaviť sa toxínov. 🧼
+✅ Podporujú zdravé kosti – bohaté na vápnik, horčík a vitamín K. 🦴
+✅ Podporujú zdravie srdca – draslík reguluje krvný tlak a podporuje zdravý krvný obeh. ❤️
+✅ Pomáhajú pri chudnutí – nízkokalorické, no veľmi výživné, zasýtia na dlhší čas. 🥗
+✅ Podporujú zdravú pokožku a vlasy – vitamíny A, C a zinok pomáhajú pri tvorbe kolagénu. ✨
+
+👉 Tip: Pridaj reďkovkové microgreens do šalátov, sendvičov, polievok alebo ich skombinuj s avokádom a citrónom na zdravú nátierku! 🥑🍋
+
+Malé, ale silné – reďkovkové microgreens ti dajú energiu a zdravie na každý deň! 🌱💚</pre>
   </div>
-</section>
+</div>
+
+<div id="brokolica-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Brokolica</h3>
+    <pre>rokolicové microgreens patria medzi najzdravšie zelené potraviny na svete. Obsahujú extrémne vysoké množstvo sulforafanu, ktorý má silné protizápalové a detoxikačné účinky. Navyše sú nabité vitamínmi, minerálmi a antioxidantmi.
+
+🔬 Výživové hodnoty na 100 g brokolicových microgreens:
+
+✅ Kalórie: 35 kcal
+✅ Bielkoviny: 3,5 g
+✅ Sacharidy: 5,8 g
+✅ Vláknina: 4 g
+✅ Tuky: 0,4 g
+
+🟢 Vitamíny v brokolicových microgreens
+
+🌞 Vitamín A (beta-karotén) – podporuje zdravie očí a pokožky. 👀
+🦸‍♂️ Vitamín C – silný antioxidant, podporuje imunitu a zdravie ciev. 🛡️
+🧠 Vitamín B1 (tiamín) – dôležitý pre nervový systém a metabolizmus cukrov.
+🔋 Vitamín B2 (riboflavín) – podporuje energiu a zdravé bunky.
+⚡ Vitamín B3 (niacín) – pomáha pri detoxikácii a udržiava zdravú pokožku.
+🛠️ Vitamín B5 (kyselina pantoténová) – podporuje metabolizmus tukov a sacharidov.
+💡 Vitamín B6 – zlepšuje mozgové funkcie a náladu.
+🩸 Vitamín B9 (kyselina listová) – podporuje tvorbu DNA a krvotvorbu.
+🦴 Vitamín K – nevyhnutný pre zdravé kosti a správnu zrážanlivosť krvi.
+
+🔵 Minerály v brokolicových microgreens
+
+💪 Vápnik (Ca) – podporuje pevnosť kostí a zdravie zubov. 🦷
+⚡ Horčík (Mg) – nevyhnutný pre svaly a nervový systém.
+💖 Draslík (K) – reguluje krvný tlak a podporuje hydratáciu buniek.
+🩸 Železo (Fe) – dôležité pre tvorbu červených krviniek.
+🛡️ Zinok (Zn) – posilňuje imunitný systém a regeneráciu buniek.
+🧠 Mangán (Mn) – podporuje metabolizmus a mozgové funkcie.
+🔩 Meď (Cu) – pomáha pri tvorbe kolagénu a zdraví ciev.
+🦷 Fosfor (P) – podporuje silné kosti a zuby.
+
+🟠 Ďalšie prospešné látky
+
+🔬 Sulforafan – silný antioxidant, ktorý detoxikuje telo a podporuje zdravie pečene.
+🧪 Chlorofyl – podporuje okysličenie krvi a detoxikáciu.
+💚 Luteín a zeaxantín – chránia oči pred UV žiarením.
+
+💡 Prečo zaradiť brokolicové microgreens do stravy?
+
+✅ Podporujú detoxikáciu – pomáhajú telu zbaviť sa toxínov.
+✅ Posilňujú imunitný systém – vysoký obsah vitamínu C a antioxidantov.
+✅ Zlepšujú trávenie – vláknina podporuje zdravie čriev.
+✅ Podporujú zdravé srdce – draslík a sulforafan chránia cievy.
+✅ Pomáhajú pri chudnutí – nízkokalorické, ale veľmi výživné.
+✅ Znižujú zápaly – antioxidanty chránia bunky pred poškodením.
+
+👉 Tip: Brokolicové microgreens sa skvele hodia do smoothies, šalátov, sendvičov a polievok. 🍽️</pre>
+  </div>
+</div>
+
+<div id="kalerab-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Kaleráb</h3>
+    <pre>Kalerábové microgreens majú jemne sladkastú chuť, sú plné vitamínov a minerálov a podporujú imunitu, trávenie a zdravé srdce.
+
+🔬 Výživové hodnoty na 100 g kalerábových microgreens:
+
+✅ Kalórie: 30 kcal
+✅ Bielkoviny: 3,2 g
+✅ Sacharidy: 5,5 g
+✅ Vláknina: 3,5 g
+✅ Tuky: 0,3 g
+
+🟢 Vitamíny a minerály v kalerábových microgreens
+
+🌞 Vitamín A, C, K, B-komplex – podporujú zdravie očí, metabolizmus a regeneráciu buniek.
+💪 Vápnik, draslík, železo – posilňujú kosti, krvný obeh a nervovú sústavu.
+
+💡 Prečo zaradiť kalerábové microgreens do stravy?
+
+✅ Podporujú trávenie – vláknina pomáha črevnej mikroflóre.
+✅ Zlepšujú krvný obeh – železo a draslík podporujú zdravé cievy.
+✅ Majú protizápalové účinky – vďaka antioxidantom chránia bunky.
+
+👉 Tip: Skvelé do šalátov a sendvičov! 🥗</pre>
+  </div>
+</div>
+
+<div id="horcica-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Horčice</h3>
+    <pre>Horčičné microgreens majú pikantnú, ostrú chuť, sú bohaté na antioxidanty a podporujú trávenie a imunitu.
+
+🔬 Výživové hodnoty na 100 g horčičných microgreens:
+
+✅ Kalórie: 37 kcal
+✅ Bielkoviny: 3,7 g
+✅ Sacharidy: 6 g
+✅ Vláknina: 3,5 g
+✅ Tuky: 0,5 g
+
+🟢 Vitamíny a minerály v horčičných microgreens
+
+🌞 Vitamín A, C, K – podporujú zdravie kože, očí a kostí.
+💖 Draslík, vápnik, železo – podporujú krvný obeh a pevnosť kostí.
+
+💡 Prečo zaradiť horčičné microgreens do stravy?
+
+✅ Podporujú trávenie – enzýmy podporujú produkciu žalúdočných štiav.
+✅ Zlepšujú krvný tlak – draslík udržiava rovnováhu tekutín v tele.
+✅ Znižujú zápaly – antioxidanty chránia telo pred oxidačným stresom.
+
+👉 Tip: Výborné do ázijských jedál a pikantných šalátov! 🥗🔥</pre>
+  </div>
+</div>
+
+<div id="rukola-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Rukoly</h3>
+    <pre>Rukolové microgreens majú jemne korenistú, orieškovú chuť, podporujú zdravie kostí, srdca a trávenie.
+
+🔬 Výživové hodnoty na 100 g rukolových microgreens:
+
+✅ Kalórie: 32 kcal
+✅ Bielkoviny: 3,5 g
+✅ Sacharidy: 5,8 g
+✅ Vláknina: 3 g
+✅ Tuky: 0,4 g
+
+🟢 Vitamíny a minerály v rukolových microgreens
+
+🦸‍♂️ Vitamín C, K, A – podporujú imunitu a zdravie kože.
+💖 Vápnik, draslík, horčík – pomáhajú srdcu a svalom.
+
+💡 Prečo zaradiť rukolové microgreens do stravy?
+
+✅ Podporujú zdravé trávenie – vláknina podporuje zdravie čriev.
+✅ Znižujú krvný tlak – draslík reguluje cievy.
+✅ Majú protizápalové účinky – antioxidanty chránia bunky.
+
+👉 Tip: Skvelé do talianskych jedál a šalátov! 🍕</pre>
+  </div>
+</div>
+
+<div id="azia-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Ázijského mixu </h3>
+    <pre>Tento mix kombinuje jemné a pikantné chute vďaka zmesi pak choi (čínska kapusta), biela horčica, mizuna červená a mladé listy kvaky (turín). Obsahuje množstvo vitamínov a antioxidantov, ktoré podporujú zdravie srdca, trávenia a imunity.
+
+🔬 Výživové hodnoty na 100 g ázijského mixu microgreens:
+
+✅ Kalórie: 38 kcal
+✅ Bielkoviny: 3,9 g
+✅ Sacharidy: 6,2 g
+✅ Vláknina: 4 g
+✅ Tuky: 0,5 g
+
+🟢 Vitamíny a minerály v ázijskom mixe microgreens
+
+🌞 Vitamín A, C, K, B-komplex – podporujú zdravé kosti, metabolizmus a imunitu.
+💖 Draslík, vápnik, horčík, železo – posilňujú kardiovaskulárny systém a kosti.
+
+💡 Prečo zaradiť ázijský mix microgreens do stravy?
+
+✅ Podporujú trávenie – enzýmy a vláknina regulujú črevá.
+✅ Zlepšujú krvný tlak – draslík pomáha udržiavať zdravé cievy.
+✅ Majú protizápalové účinky – antioxidanty chránia bunky.
+✅ Posilňujú imunitný systém – kombinácia rôznych druhov listovej zeleniny zaisťuje široké spektrum živín.
+✅ Pomáhajú pri detoxikácii – vysoký obsah chlorofylu podporuje čistenie tela od toxínov.
+
+👉 Tip: Skvelé do wok jedál, polievok, sushi a ázijských šalátov! 🍜🥢</pre>
+  </div>
+</div>
+
+<div id="salat-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity Šalátu </h3>
+    <pre>Šalátové microgreens sú jemné, svieže a plné vitamínov a minerálov, ktoré podporujú trávenie, hydratáciu a zdravie kože. Sú ideálne pre ľudí, ktorí hľadajú ľahko stráviteľnú, ale výživnú zeleninu.
+
+🔬 Výživové hodnoty na 100 g šalátových microgreens:
+
+✅ Kalórie: 25 kcal
+✅ Bielkoviny: 2,5 g
+✅ Sacharidy: 4,2 g
+✅ Vláknina: 2,8 g
+✅ Tuky: 0,3 g
+
+🟢 Vitamíny a minerály v šalátových microgreens
+
+🌞 Vitamín A (beta-karotén) – podporuje zdravie očí a pokožky. 👀
+🦸‍♂️ Vitamín C – silný antioxidant, ktorý posilňuje imunitu. 🛡️
+💧 Vitamín K – nevyhnutný pre zdravé kosti a správnu zrážanlivosť krvi. 🦴
+💡 Vitamíny skupiny B (B1, B2, B6, B9) – podporujú metabolizmus a energetickú rovnováhu. ⚡
+💖 Draslík, vápnik, horčík, železo – pomáhajú regulovať krvný tlak a posilňujú kardiovaskulárny systém.
+
+💡 Prečo zaradiť šalátové microgreens do stravy?
+
+✅ Podporujú hydratáciu – vysoký obsah vody udržuje telo svieže a hydratované. 💦
+✅ Zlepšujú trávenie – vláknina podporuje zdravie čriev. 🌱
+✅ Podporujú zdravú pleť – vitamín C a beta-karotén prispievajú k mladistvému vzhľadu. ✨
+✅ Nízky obsah kalórií – ideálne pre ľudí, ktorí chcú schudnúť bez straty živín. 🥗
+✅ Podporujú zdravé kosti – vápnik, horčík a vitamín K posilňujú kostnú štruktúru. 🦴
+
+👉 Tip: Pridaj šalátové microgreens do čerstvých šalátov, wrapov, sendvičov alebo ich použi ako jemnú zeleninovú oblohu! 🥗🍞</pre>
+  </div>
+</div>
+
+<div id="chili-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3>Benefity</h3>
+    <p>Už čoskoro.</p>
+  </div>
+</div>
 
 <section id="o-nas">
   <h2>O nás</h2>
@@ -538,7 +695,7 @@ Uži si silu prírody v jednej hrsti!</pre>
 </footer>
 
 <script>
-// Smooth scrolling pre navigáciu
+// Smooth scrolling for navigation
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -548,7 +705,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Modal funkčnosť
+// Trigger animations on scroll
+const cards = document.querySelectorAll('.microgreen-card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'grow 1s ease forwards';
+    }
+  });
+}, { threshold: 0.2 });
+cards.forEach(card => observer.observe(card));
+
+// Modal functionality
 const modalCards = document.querySelectorAll('.microgreen-card');
 const modals = document.querySelectorAll('.modal');
 const closeButtons = document.querySelectorAll('.close-btn');
@@ -573,70 +741,6 @@ modals.forEach(modal => {
     if (e.target === modal) {
       modal.style.display = 'none';
     }
-  });
-});
-
-// Ukladanie a zobrazovanie recenzií (vrátane fotiek a mena) pomocou localStorage
-document.addEventListener('DOMContentLoaded', function(){
-  const scrollingText = document.querySelector('.scrolling-text');
-  let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-
-  function getStars(rating) {
-    let stars = '';
-    for(let i = 1; i <= rating; i++){
-      stars += '&#9733;';
-    }
-    for(let i = rating + 1; i <= 5; i++){
-      stars += '&#9734;';
-    }
-    return stars;
-  }
-
-  function renderReviews() {
-    scrollingText.innerHTML = '';
-    reviews.forEach(review => {
-      const reviewItem = document.createElement('span');
-      reviewItem.className = 'review-item';
-      let content = `<strong>${review.name}:</strong> ${review.text} | ${getStars(review.rating)}`;
-      if (review.photo) {
-        content += `<br><img src="${review.photo}" alt="Review Photo" style="max-width:100px; max-height:100px;">`;
-      }
-      reviewItem.innerHTML = content + '&nbsp;&nbsp;&nbsp;&nbsp;';
-      scrollingText.appendChild(reviewItem);
-    });
-  }
-
-  renderReviews();
-
-  document.getElementById('review-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = this.elements['review-name'].value;
-    const reviewText = this.elements['review-text'].value;
-    const rating = this.elements['rating'].value;
-    const photoFile = this.elements['review-photo'].files[0];
-
-    function saveReview(photoData) {
-      const review = {
-        name: name,
-        text: reviewText,
-        rating: rating,
-        photo: photoData || null
-      };
-      reviews.push(review);
-      localStorage.setItem('reviews', JSON.stringify(reviews));
-      renderReviews();
-    }
-
-    if (photoFile) {
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        saveReview(event.target.result);
-      };
-      reader.readAsDataURL(photoFile);
-    } else {
-      saveReview(null);
-    }
-    this.reset();
   });
 });
 </script>

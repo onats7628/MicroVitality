@@ -187,13 +187,14 @@ white-space: pre-wrap;
 word-wrap: break-word;
 }
 
-/* Recenzie - Review Section */
+/* Recenzie Section */
 #recenzie {
 padding: 4rem 2rem;
 text-align: center;
 background: #e8f5e9;
 }
 
+/* Formulár pre pridávanie recenzií */
 .review-form {
 margin: 0 auto 2rem;
 max-width: 600px;
@@ -223,6 +224,10 @@ border: 1px solid #ccc;
 border-radius: 4px;
 }
 
+.review-form input[type="file"] {
+margin-bottom: 1rem;
+}
+
 .review-form button {
 background: #4caf50;
 color: #fff;
@@ -236,6 +241,7 @@ cursor: pointer;
 background: #43a047;
 }
 
+/* Hviezdičkové hodnotenie – hviezdičky budú vedľa seba */
 .star-rating {
 direction: rtl;
 font-size: 1.5rem;
@@ -249,6 +255,7 @@ display: none;
 .star-rating label {
 color: #ccc;
 cursor: pointer;
+display: inline-block;
 }
 
 .star-rating input:checked ~ label,
@@ -257,18 +264,29 @@ cursor: pointer;
 color: #ffca28;
 }
 
-.reviews {
-margin: 0 auto;
+/* Recenzie – automatické horizontálne scrollovanie */
+.reviews-wrapper {
 max-width: 600px;
-text-align: left;
+margin: 0 auto;
+overflow: hidden;
+border: 1px solid #ccc;
+border-radius: 12px;
+background: #fff;
+position: relative;
+height: 150px; /* pevná výška pre zobrazenie recenzií */
+}
+
+.reviews {
+display: flex;
+width: max-content;
+animation: scrollReviews 20s linear infinite;
 }
 
 .review {
-background: #fff;
+min-width: 600px;
 padding: 1rem;
-border-radius: 12px;
-margin-bottom: 1rem;
-box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+box-sizing: border-box;
+border-right: 1px solid #eee;
 }
 
 .review .review-name {
@@ -279,6 +297,12 @@ margin-bottom: 0.5rem;
 .review .review-rating span {
 color: #ffca28;
 font-size: 1.2rem;
+}
+
+/* Kľúčové snímky pre auto-scroll recenzií */
+@keyframes scrollReviews {
+0% { transform: translateX(100%); }
+100% { transform: translateX(-100%); }
 }
 
 /* Footer */
@@ -310,6 +334,8 @@ section { padding: 2rem 1rem; }
 .microgreen-card { width: 100%; max-width: 300px; }
 .modal-content { width: 95%; }
 .video-container { height: 200px; }
+.reviews-wrapper { max-width: 100%; }
+.review { min-width: 100%; }
 }
 
 @keyframes fadeInDown {
@@ -444,19 +470,23 @@ to { transform: translateY(0); opacity: 1; }
 <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 hviezdička">★</label>
 </div>
 
+<label for="reviewImage">Príloha (obrázok):</label>
+<input type="file" id="reviewImage" name="reviewImage" accept="image/*">
+
 <button type="submit">Odoslať recenziu</button>
 </form>
 </div>
 
+<div class="reviews-wrapper">
 <div class="reviews">
-<h3>Recenzie od zákazníkov</h3>
-<!-- Príklad recenzie -->
+<!-- Dynamicky pridané recenzie -->
 <div class="review">
 <p class="review-name">Ján</p>
 <div class="review-rating">
 <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
 </div>
 <p class="review-text">Skvelá kvalita microgreens, určite odporúčam!</p>
+</div>
 </div>
 </div>
 </section>
@@ -535,7 +565,6 @@ Uži si silu prírody v jednej hrsti! 🌱💚</pre>
 ✅ Vláknina: 4 g
 ✅ Tuky: 0,6 g
 
-
 🟢 Vitamíny v reďkovkových microgreens
 
 🌞 Vitamín A (beta-karotén) – chráni oči a podporuje zdravú pokožku. 👁️✨
@@ -557,7 +586,7 @@ Uži si silu prírody v jednej hrsti! 🌱💚</pre>
 🛡️ Zinok (Zn) – posilňuje imunitný systém a podporuje regeneráciu buniek.
 🧠 Mangán (Mn) – nevyhnutný pre metabolizmus a zdravie mozgu.
 🔩 Meď (Cu) – pomáha pri tvorbe kolagénu a zdraví ciev.
-🦷 Fosfor (P) – podporuje energetický metabolizmus a silné kosti
+🦷 Fosfor (P) – podporuje energetický metabolizmus a silné kosti.
 🟠 Ďalšie prospešné látky
 
 🔬 Chlorofyl – pomáha detoxikovať organizmus a zlepšuje okysličenie buniek.
@@ -780,7 +809,7 @@ Malé, ale silné – reďkovkové microgreens ti dajú energiu a zdravie na ka�
 💡 Prečo zaradiť šalátové microgreens do stravy?
 
 ✅ Podporujú hydratáciu – vysoký obsah vody udržuje telo svieže a hydratované. 💦
-✅ Zlepšujú trávenie – vláknina podporuje zdravie čriev. 🌱
+✅ Zlepšujú trávenie – vláknina podporuje zdravie čriev.
 ✅ Podporujú zdravú pleť – vitamín C a beta-karotén prispievajú k mladistvému vzhľadu. ✨
 ✅ Nízky obsah kalórií – ideálne pre ľudí, ktorí chcú schudnúť bez straty živín. 🥗
 ✅ Podporujú zdravé kosti – vápnik, horčík a vitamín K posilňujú kostnú štruktúru. 🦴
@@ -880,7 +909,7 @@ e.preventDefault();
 var name = document.getElementById('reviewName').value;
 var text = document.getElementById('reviewText').value;
 var ratingElem = document.querySelector('input[name="rating"]:checked');
-if(!ratingElem) {
+if (!ratingElem) {
 alert('Prosím vyberte hodnotenie.');
 return;
 }
@@ -909,6 +938,22 @@ reviewDiv.appendChild(nameP);
 reviewDiv.appendChild(ratingDiv);
 reviewDiv.appendChild(textP);
 
+// Handle image file, ak je priložený obrázok
+var fileInput = document.getElementById('reviewImage');
+if (fileInput.files && fileInput.files[0]) {
+var reader = new FileReader();
+reader.onload = function(e) {
+var img = document.createElement('img');
+img.src = e.target.result;
+img.alt = 'Príloha recenzie';
+img.style.maxWidth = '100px';
+img.style.display = 'block';
+img.style.marginTop = '0.5rem';
+reviewDiv.appendChild(img);
+}
+reader.readAsDataURL(fileInput.files[0]);
+}
+
 document.querySelector('.reviews').appendChild(reviewDiv);
 
 this.reset();
@@ -916,3 +961,4 @@ this.reset();
 </script>
 </body>
 </html>
+

@@ -116,12 +116,12 @@
       object-fit: cover;
     }
 
-    /* Microgreens Container */
+    /* Microgreens Container – nastavené pomocou CSS grid pre 5 produktov na riadok */
     .microgreens-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(5, 300px);
       gap: 2rem;
+      justify-content: center;
     }
 
     .microgreen-card {
@@ -138,7 +138,6 @@
       transform: translateY(-10px) scale(1.1);
     }
 
-    /* Upravené pravidlo pre obrázky, aby boli všetky rovnaké (vzorkou je Pea.jpg) */
     .microgreen-card img {
       width: 100%;
       height: 200px;
@@ -182,7 +181,6 @@
       animation: slideIn 0.3s ease;
     }
 
-    /* Zabezpečí, že text v <pre> sa bude zalamovať */
     .modal-content pre {
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -238,9 +236,13 @@
       .microgreen-card { width: 100%; max-width: 300px; }
       .modal-content { width: 95%; }
       .video-container { height: 200px; }
+      /* Pri menších obrazovkách môžeš zmeniť počet stĺpcov */
+      .microgreens-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
     }
 
-    /* Veľký obrázok v sekcii Cena a doprava (4x väčší ako obrázky microgreens) */
+    /* Veľký obrázok v sekcii Cena a doprava */
     .big-img {
       height: 800px;
       object-fit: cover;
@@ -306,9 +308,6 @@
         <p>Osviežujúca a jemne pikantná, plná chuti.</p>
       </div>
 
-      <!-- Prerušenie, aby sa prvých 5 zobrazilo v jednom riadku -->
-      <div style="flex-basis: 100%; height: 0;"></div>
-
       <div class="microgreen-card" data-modal="rukola-modal">
         <img src="rukola.jpg" alt="Rukola">
         <h3>Rukola</h3>
@@ -336,7 +335,6 @@
       </div>
 
       <!-- Nové produkty -->
-      <div style="flex-basis: 100%; height: 0;"></div>
       <div class="microgreen-card" data-modal="novy1-modal">
         <img src="novy1.jpg" alt="Nový produkt 1">
         <h3>Nový produkt 1</h3>
@@ -469,10 +467,10 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 • 👁️ Luteín a zeaxantín – prispievajú k ochrane očí pred svetelným žiarením.
 
 💡 Prečo zaradiť hráškové microgreens do stravy?
-✅ Vitamín C a zinok – prispievajú k normálnej funkcii imunitného systému.
+✅ Vitamín C a zinok – prispieva k normálnej funkcii imunitného systému.
 🌾 Vláknina – prispieva k normálnej činnosti tráviaceho systému.
 ❤️ Draslík – prispieva k udržaniu normálneho krvného tlaku.
-⚡ Horčík a vitamíny B – prispievajú k normálnej činnosti nervového systému.
+⚡ Horčík a vitamíny B – prispieva k normálnej činnosti nervového systému.
 🦴 Vitamín K, vápnik a fosfor – prispieva k udržaniu normálneho stavu kostí.
 
 👉 Tip: Hráškové microgreens sú vhodné do šalátov, smoothies, polievok alebo ako dekorácia. 🥗🍲
@@ -535,10 +533,10 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 • 👁️ Luteín a zeaxantín – prispievajú k ochrane očí pred svetelným žiarením.
 
 💡 Prečo zaradiť reďkovkové microgreens do stravy?
-✅ Vitamín C a zinok – prispievajú k normálnej funkcii imunitného systému.
+✅ Vitamín C a zinok – prispieva k normálnej funkcii imunitného systému.
 🌾 Vláknina – prispieva k normálnej činnosti tráviaceho systému.
 ❤️ Draslík – prispieva k udržaniu normálneho krvného tlaku.
-⚡ Horčík a vitamíny B – prispievajú k normálnej činnosti nervového systému.
+⚡ Horčík a vitamíny B – prispieva k normálnej činnosti nervového systému.
 🦴 Vitamín K, vápnik a fosfor – prispieva k udržaniu normálneho stavu kostí.
 
 👉 Tip: Reďkovkové microgreens sú vhodné do šalátov, sendvičov, polievok alebo ako dekorácia. 🥗🍲
@@ -552,8 +550,6 @@ Uvedené tvrdenia o príspevku vitamínov a minerálov k funkcii organizmu sú s
 ✅ Súlad s EÚ:
 
 Všetky zdravotné tvrdenia sú overené v registri EÚ.
-
-Alergény a výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 
 Vychutnajte si prírodnú energiu v každej hrsti! 🌱💚</pre>
     </div>
@@ -956,17 +952,6 @@ Vychutnajte si prírodnú energiu v každej hrsti! 🌱💚</pre>
         targetSection.scrollIntoView({ behavior: 'smooth' });
       });
     });
-
-    // Trigger animations on scroll
-    const cards = document.querySelectorAll('.microgreen-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = 'grow 1s ease forwards';
-        }
-      });
-    }, { threshold: 0.2 });
-    cards.forEach(card => observer.observe(card));
 
     // Modal functionality
     const modalCards = document.querySelectorAll('.microgreen-card');

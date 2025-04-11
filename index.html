@@ -247,6 +247,36 @@
       height: 800px;
       object-fit: cover;
     }
+
+    /* Štýly pre Cookies banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      z-index: 9999;
+      display: none;
+    }
+    .cookie-banner p {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    .cookie-banner button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #4caf50;
+      color: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .cookie-banner a {
+      color: #8bc34a;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -460,7 +490,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 ✅ Vitamín C a zinok – prispieva k normálnej funkcii imunitného systému.
 🌾 Vláknina – prispieva k normálnej činnosti tráviaceho systému.
 ❤️ Draslík – prispieva k udržaniu normálneho krvného tlaku.
-⚡ Horčík a vitamíny B – prispieva k normálnej činnosti nervového systému.
+⚡ Horčík a vitamíny B – prispievajú k normálnej činnosti nervového systému.
 🦴 Vitamín K, vápnik a fosfor – prispieva k udržaniu normálneho stavu kostí.
 
 👉 Tip pre hrášok:
@@ -535,7 +565,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 ✅ Vitamín C a zinok – prispieva k normálnej funkcii imunitného systému.
 🌾 Vláknina – prispieva k normálnej činnosti tráviaceho systému.
 ❤️ Draslík – prispieva k udržaniu normálneho krvného tlaku.
-⚡ Horčík a vitamíny B – prispieva k normálnej činnosti nervového systému.
+⚡ Horčík a vitamíny B – prispievajú k normálnej činnosti nervového systému.
 🦴 Vitamín K, vápnik a fosfor – prispieva k udržaniu normálneho stavu kostí.
 
 👉 Tip pre reďkovku (Radish Pink):
@@ -815,8 +845,6 @@ Uvedené tvrdenia o príspevku vitamínov a minerálov k funkcii organizmu sú s
 
 Všetky zdravotné tvrdenia sú overené v registri EÚ.
 
-Alergény a výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
-
 Dodajte svojim jedlám štipku Stredomoria! 🍅✨</pre>
     </div>
   </div>
@@ -924,7 +952,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 • 🌯 V wrapoch alebo sendvičoch – pridajte k avokádu a krútenej šunke.
 • 🥤 V zelených šťavách – zmiešajte s jablkom a mrkvou.
 • 🍞 Ako dekoráciu – posypte na pomazánky aleba toast s ricottou.
-• 🥣 Do jogurtových misiek – doplňte ich k granole a lesným ovociu.
+• 🥣 Do jogurtových misiek – doplňte ich k granole a lesnému ovociu.
 
 ⚠️ Alergény:
 Šalátové microgreens neobsahujú žiadne z 14 hlavných alergénov EÚ. V ojedinelých prípadoch môžu u citlivých osôb vyvolať reakcie podobné alergii.
@@ -1140,7 +1168,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 🟢 Vitamíny v pohánkových microgreens:
 • 🌞 Vitamín E – prispieva k ochrane buniek pred oxidačným stresom.
 • 🛡️ Vitamín C – prispieva k normálnej funkcii imunitného systému.
-• ⚡ Vitamín B-komplex – prispievajú k normálnemu energetickému metabolizmu.
+• ⚡ Vitamíny B-komplex – prispievajú k normálnemu energetickému metabolizmu.
 
 🔵 Minerály v pohánkových microgreens:
 • 💪 Horčík – prispieva k normálnej činnosti svalov.
@@ -1204,8 +1232,8 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 🔵 Minerály v žeruchových microgreens:
 • 💪 Vápnik – prispieva k udržaniu normálneho stavu kostí.
 • ❤️ Draslík – prispieva k udržaniu normálneho krvného tlaku.
-• 🩸 Železo – prispieva k normálnej tvorbe červených krviniek.
 • ⚡ Horčík – prispieva k normálnej činnosti svalov.
+• 🧠 Železo – prispieva k normálnej tvorbe červených krviniek.
 
 🟠 Ďalšie prospešné látky:
 • 🌿 Chlorofyl – prispieva k normálnej funkcii buniek.
@@ -1240,6 +1268,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Pridajte si štipľavú sviežosť a výživu do každej porcie! 🌶️✨</pre>
     </div>
   </div>
+
   <div id="Senovka grécka-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1300,6 +1329,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Vychutnajte si exotickú arómu a výživové benefity v každom súste! 🌿✨</pre>
     </div>
   </div>
+
   <div id="Červený ruský kel-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1360,6 +1390,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Vychutnajte si sladkú jemnosť a výživovú silu v každom súste! 🥬✨</pre>
     </div>
   </div>
+
   <div id="Repa-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1401,7 +1432,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 👉 Tip:
 Kvakové microgreens sú univerzálne! Vyskúšajte ich:
 • 🥗 V šalátoch – kombinujte s jablkom, hruškou a oregánom.
-• 🍲 V zeleninových polievkach – posypte na mrkvovú aleba zemiakovú krému.
+• 🍲 V zeleninových polievkach – posypte na mrkvovú aleba zemiakovú krémovú polievku.
 • 🥪 V sendvičoch – pridajte k avokádu a šunke.
 • 🍳 Ako ozdobu – doplňte ich k grilovanej rybe aleba tofu.
 • 🥤 V zelených šťavách – zmiešajte s jablkom a špenátom.
@@ -1420,6 +1451,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Vychutnajte si jemnú korenistú chuť a výživové benefity v každom súste! 🥕✨</pre>
     </div>
   </div>
+
   <div id="Lupina-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1479,6 +1511,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Objavte svet výživy s orechovou jemnosťou lupinových microgreens! 🌰🚀</pre>
     </div>
   </div>
+
   <div id="Červená kapusta-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1540,6 +1573,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Vychutnajte si živú farbu a výživovú silu v každom súste! 🍷🎨</pre>
     </div>
   </div>
+
   <div id="Toskánsky čierny kel-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1570,7 +1604,7 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 🟠 Ďalšie prospešné látky:
 • 🌿 Chlorofyl – prispieva k normálnej funkcii buniek.
 • 🧪 Kvercetín – flavonoid s antioxidačnými vlastnosťami.
-• 🔥 Glukozinoláty – prispievajú k prirodzeným detoxikačným procesom*.
+• 🔥 Glukozinoláty – prispievajú k prirodzenej detoxikačnej činnosti*.
 
 💡 Prečo zaradiť toskánsku čiernu kapustu do stravy?
 ✅ Vitamín C a kvercetín – prispievajú k ochrane buniek.
@@ -1602,6 +1636,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Preskúmajte hĺbku chutí a výživy s každým kúskom! 🖤🍴</pre>
     </div>
   </div>
+
   <div id="Mungo fazuľa-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1650,7 +1685,7 @@ Mungo fazuľové microgreens sú univerzálne! Vyskúšajte ich v neočakávaný
 • 🍳 V špenátových frittatách – pridajte do zmesi s feta syrom a cherry paradajkami.
 
 ⚠️ Alergény:
-Mungo fazuľa patrí medzi strukoviny (čeľaď Fabaceae). Nie je zoznamovaná medzi 14 hlavných alergénov EÚ, ale môže vyvolať reakcie u osôb citlivých na strukoviny.
+Mungo fazuľa patrí medzi strukoviny (čeľaď Fabaceae). Nie je zoznamovaný medzi 14 hlavných alergénov EÚ, ale môže vyvolať reakcie u osôb citlivých na strukoviny.
 
 🔎 Dôležité upozornenie:
 Uvedené tvrdenia o príspevku vitamínov a minerálov k funkcii organizmu sú schválené Európskou úniou (pozri nariadenie (ES) č. 1924/2006). Špecifické účinky enzýmov nie sú schválené ako zdravotné tvrdenia. Tieto informácie nenahradzujú odborné zdravotné poradenstvo. V prípade pochybností konzultujte odborníka.
@@ -1663,6 +1698,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Preskúmajte svet sviežosti a kreatívnej výživy! 🌏✨</pre>
     </div>
   </div>
+
   <div id="Červená šošovica-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1723,6 +1759,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Objavte exotické chute a výživovú silu v každom súste! 🌍🔥</pre>
     </div>
   </div>
+
   <div id="Cícer-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1784,6 +1821,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Preskúmajte mediteránnu chuť a výživovú silu v každom súste! 🏺🌞</pre>
     </div>
   </div>
+
   <div id="Hrášok Dunn-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1845,6 +1883,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Preskúmajte svetové chute s jemnou sladkosťou Dunn hrachu! 🌍🌿</pre>
     </div>
   </div>
+
   <div id="Pšeničná tráva-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1883,14 +1922,14 @@ Hodnoty sa môžu líšiť v závislosti od podmienok pestovania.
 ⚡ Horčík a železo – podporujú energiu a krvný obeh.
 
 👉 Tip:
-Pšeničná tráva je viac než len ingrediencia! Vyskúšajte ju v netradičných formách:
+Pšeničná tráva nie je len ingrediencia – vyskúšajte ju napríklad:
 • 🧴 V domácich maskách – zmiešajte s medom a jogurtom pre osviežujúcu pleťovú kúru.
 • 🧊 V detoxikačných ice cubes – zmrazte s citrónovou šťavou a pridajte do vody.
-• 🍸 V zelených kokteiloch – kombinujte s vodkou, limetkou a agávovým sirupom.
+• 🍸 V zelených kokteiloch – kombinujte s mandľovým mliekom a vanilkou.
 • 🍵 V shotoch – užívajte 30 ml čerstvej šťavy ráno pre energiu.
 • 🥗 V raw dezertoch – pridajte do energetických tyčiniek s datľami a orechmi.
 • 🧉 V zelenom latté – zmiešajte s mandľovým mliekom a vanilkou.
-• 🌯 V raw wrapoch – zabalte do listov salátu s avokádom a kliešťkami.
+• 🌯 V raw wrapoch – zabaľte do listov salátu s avokádom a kliešťkami.
 
 ⚠️ Alergény:
 Pšeničná tráva je prirodzene bezlepková, ale patrí do čeľade Poaceae. Môže vyvolať reakcie u osôb citlivých na trávy.
@@ -1906,6 +1945,7 @@ Výživové údaje sú uvedené podľa nariadenia (EÚ) č. 1169/2011.
 Transformujte svoju stravu aj krásu silou pšeničnej trávy! 💚✨</pre>
     </div>
   </div>
+
   <div id="novy17-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">×</span>
@@ -1916,7 +1956,7 @@ Transformujte svoju stravu aj krásu silou pšeničnej trávy! 💚✨</pre>
 
   <section id="cena-doprava">
     <h2>Cena a doprava</h2>
-    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 2rem; justify-content: center;">
       <!-- Textová časť -->
       <div style="flex: 1; min-width: 280px; text-align: center; line-height: 1.6;">
         <p><strong>Cena:</strong> 4 EUR (s DPH) za jeden kus microgreens – bez rozdielu druhu 🌱</p>
@@ -1964,6 +2004,15 @@ Transformujte svoju stravu aj krásu silou pšeničnej trávy! 💚✨</pre>
     </div>
   </footer>
 
+  <!-- Cookies Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      Táto stránka používa cookies na zabezpečenie najlepšieho zážitku. Pokračovaním súhlasíte s používaním cookies. 
+      <a href="/cookie-policy.html" target="_blank">Viac informácií</a>.
+    </p>
+    <button id="cookie-accept">Súhlasím</button>
+  </div>
+
   <script>
     // Smooth scrolling for navigation
     document.querySelectorAll('nav a').forEach(anchor => {
@@ -2000,6 +2049,21 @@ Transformujte svoju stravu aj krásu silou pšeničnej trávy! 💚✨</pre>
         if (e.target === modal) {
           modal.style.display = 'none';
         }
+      });
+    });
+  </script>
+
+  <!-- Cookies Banner Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Ak ešte nie je súhlas uložený, zobraz banner
+      if (!localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+      // Po kliknutí na tlačidlo "Súhlasím" ulož súhlas a skry banner
+      document.getElementById("cookie-accept").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "true");
+        document.getElementById("cookie-banner").style.display = "none";
       });
     });
   </script>

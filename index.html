@@ -2053,19 +2053,5 @@ Transformujte svoju stravu aj krásu silou pšeničnej trávy! 💚✨</pre>
     });
   </script>
 
-  <!-- Cookies Banner Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Ak ešte nie je súhlas uložený, zobraz banner
-      if (!localStorage.getItem("cookieConsent")) {
-        document.getElementById("cookie-banner").style.display = "block";
-      }
-      // Po kliknutí na tlačidlo "Súhlasím" ulož súhlas a skry banner
-      document.getElementById("cookie-accept").addEventListener("click", function() {
-        localStorage.setItem("cookieConsent", "true");
-        document.getElementById("cookie-banner").style.display = "none";
-      });
-    });
-  </script>
 </body>
 </html>

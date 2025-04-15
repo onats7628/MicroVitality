@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRBC6426K0"></script>
 <script>
@@ -12,7 +10,7 @@
   gtag('config', 'G-JRBC6426K0');
 </script>
 
-  <!-- Google Tag Manager -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -20,268 +18,274 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KGWPD698');</script>
 <!-- End Google Tag Manager -->
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MicroVitality - Čerstvá Mikrozeleninka</title>
+<link rel="icon" type="image/x-icon" href="favicon-new.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.folklor-font {
+  font-family: 'Butterfly Kids', cursive;
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+body {
+  background: #f5f6f2;
+  color: #2f2f2f;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #8bc34a, #4caf50);
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  animation: fadeInDown 1s ease;
+}
+
+header p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  animation: fadeInUp 1s ease;
+}
+
+nav {
+  background: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #8bc34a;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+.video-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ⬇️ UPRAVENÝ GRID START ⬇️ */
+.microgreens-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .microgreens-container { grid-template-columns: repeat(3, 1fr); }
+  .folklor-font { font-size: 3rem !important; }
+}
+
+@media (max-width: 768px) {
+  .microgreens-container { grid-template-columns: 1fr; }
+  .folklor-font { font-size: 2.5rem !important; }
+}
+/* ⬆️ UPRAVENÝ GRID END ⬆️ */
+
+.microgreen-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.microgreen-card:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.microgreen-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.microgreen-card h3 {
+  margin: 1rem 0;
+  color: #8bc34a;
+  font-size: 1.4rem;
+}
+
+.microgreen-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+.modal-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+footer .social a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* ⬇️ RESPONZÍVNE OBRÁZKY START ⬇️ */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.big-img {
+  height: 60vh;
+  min-height: 400px;
+  object-fit: cover;
+}
+/* ⬆️ RESPONZÍVNE OBRÁZKY END ⬆️ */
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+  nav ul { flex-direction: column; align-items: center; }
+  nav ul li { margin: 0.8rem 0; }
+  section { padding: 2rem 1rem; }
+  .microgreen-card { width: 100%; max-width: 300px; }
+  .modal-content { width: 95%; }
+  .video-container { height: 200px; }
+}
+</style>
+</head>
+
+<body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGWPD698"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MicroVitality - Čerstvá Mikrozeleninka</title>
-  <link rel="icon" type="image/x-icon" href="favicon-new.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    .folklor-font {
-      font-family: 'Butterfly Kids', cursive;
-      font-size: 4rem;
-      color: #ffffff;
-    }
+<header>
+  <h1>MicroVitality</h1>
+  <h2 class="folklor-font">Mikrozelenina od Lili</h2>
+  <p>Zdravá mikrozeleninka plná vitality priamo k vám!</p>
+</header>
 
-    body {
-      background: #f5f6f2;
-      color: #2f2f2f;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #8bc34a, #4caf50);
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      animation: fadeInDown 1s ease;
-    }
-
-    header p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      animation: fadeInUp 1s ease;
-    }
-
-    /* Navigation */
-    nav {
-      background: #fff;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-
-    nav ul li {
-      margin: 0 2rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #4caf50;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #8bc34a;
-    }
-
-    /* Sekcie */
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #4caf50;
-      margin-bottom: 2rem;
-      animation: fadeIn 1s ease;
-    }
-
-    /* Video Container */
-    .video-container {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      margin: 2rem auto;
-    }
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Microgreens Container – nastavené pomocou CSS grid pre 5 produktov na riadok */
-    .microgreens-container {
-      display: grid;
-      grid-template-columns: repeat(5, 300px);
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .microgreen-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 300px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .microgreen-card:hover {
-      transform: translateY(-10px) scale(1.1);
-    }
-
-    .microgreen-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .microgreen-card h3 {
-      margin: 1rem 0;
-      color: #8bc34a;
-      font-size: 1.4rem;
-    }
-
-    .microgreen-card p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    /* Modal Window */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 200;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 95%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      animation: slideIn 0.3s ease;
-    }
-
-    .modal-content pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Footer */
-    footer {
-      background: #4caf50;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
-
-    footer .social a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
-      nav ul { flex-direction: column; align-items: center; }
-      nav ul li { margin: 0.8rem 0; }
-      section { padding: 2rem 1rem; }
-      .microgreen-card { width: 100%; max-width: 300px; }
-      .modal-content { width: 95%; }
-      .video-container { height: 200px; }
-      /* Pri menších obrazovkách môžeš zmeniť počet stĺpcov */
-      .microgreens-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
-    }
-
-    /* Veľký obrázok v sekcii Cena a doprava */
-    .big-img {
-      height: 800px;
-      object-fit: cover;
-    }
-
-  </style>
-</head>
-<body>
-  <header>
-    <h1>MicroVitality</h1>
-    <h2 class="folklor-font">Mikrozelenina od Lili</h2>
-    <p>Zdravá mikrozeleninka plná vitality priamo k vám!</p>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="#domov">Domov</a></li>
-      <li><a href="#produkty">Produkty</a></li>
-      <li><a href="#cena-doprava">Cena a doprava</a></li>
-      <li><a href="#o-nas">O nás</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#domov">Domov</a></li>
+    <li><a href="#produkty">Produkty</a></li>
+    <li><a href="#cena-doprava">Cena a doprava</a></li>
+    <li><a href="#o-nas">O nás</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
 
   <section id="domov">
     <h2>Vitajte v MicroVitality</h2>
